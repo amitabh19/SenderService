@@ -46,7 +46,7 @@ public class SenderService {
 		t.setType(EncryptObject.encrypt(t.getType()));
 		t = tr.save(t);
 		System.out.println("Sender Obj" + t.toString());
-		String receiverURL = "http://localhost:9002/receiver/receiveTransaction";
+		String receiverURL = "https://receiver-microservice.herokuapp.com/receiver/receiveTransaction";
 		return restTemplate.postForEntity(receiverURL, t, Transaction.class);
 	}
 
